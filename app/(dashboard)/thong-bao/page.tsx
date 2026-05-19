@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { BellRing } from "lucide-react";
 import { EmptyState } from "@/components/ui/empty-state";
+import { PageHeading } from "@/components/ui/page-heading";
 import { Section } from "@/components/ui/section";
 import { markNotificationReadAction } from "@/services/notification-actions";
 import { getAppContext } from "@/services/context";
@@ -13,22 +14,19 @@ export default async function NotificationsPage() {
 
   return (
     <main className="page-shell grid gap-5">
-      <div>
-        <h1 className="text-2xl font-black text-ink">Thông báo</h1>
-        <p className="mt-1 text-sm text-muted">Realtime popup cũng được lưu lại để xem sau.</p>
-      </div>
+      <PageHeading title="Thông báo" description="Popup realtime được lưu lại tại đây để bạn không bỏ lỡ việc trực, điểm danh và minh chứng mới." />
       <Section title="Hộp thông báo">
         {notifications.length > 0 ? (
           <div className="grid gap-3">
             {notifications.map((item) => (
-              <article key={item.id} className="flex gap-3 rounded-lg border border-slate-200 bg-white p-4">
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-brand-50 text-brand-700">
+              <article key={item.id} className="surface animate-in flex gap-3 rounded-lg p-4">
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-brand-50 to-indigo-50 text-brand-700">
                   <BellRing className="h-5 w-5" aria-hidden />
                 </span>
                 <div className="min-w-0 flex-1">
                   <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
                     <div>
-                      <p className="font-bold text-ink">{item.title}</p>
+                      <p className="font-black text-ink">{item.title}</p>
                       <p className="mt-1 text-sm text-muted">{item.message}</p>
                       <p className="mt-2 text-xs text-muted">{formatDateTimeVi(item.created_at)}</p>
                     </div>

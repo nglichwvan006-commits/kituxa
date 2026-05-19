@@ -1,4 +1,5 @@
 import { ProofGrid } from "@/components/dashboard/proof-grid";
+import { PageHeading } from "@/components/ui/page-heading";
 import { Section } from "@/components/ui/section";
 import { getAppContext } from "@/services/context";
 import { getRecentProofs } from "@/services/queries";
@@ -11,10 +12,7 @@ export default async function ProofsPage({ searchParams }: { searchParams: Promi
 
   return (
     <main className="page-shell grid gap-5">
-      <div>
-        <h1 className="text-2xl font-black text-ink">Nhật ký trực nhật</h1>
-        <p className="mt-1 text-sm text-muted">Ảnh minh chứng được phân trang và tự dọn sau 7 ngày.</p>
-      </div>
+      <PageHeading title="Nhật ký trực nhật" description="Ảnh minh chứng được phân trang, xem bằng signed URL riêng tư và tự dọn sau 7 ngày." />
       <Section title={`Bảng minh chứng (${count})`}>
         <ProofGrid proofs={proofs} currentUserId={ctx.userId} role={ctx.role} />
       </Section>

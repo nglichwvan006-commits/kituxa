@@ -31,7 +31,7 @@ export function ScheduleForm({ members, schedule }: { members: RoomMember[]; sch
       <textarea className="input min-h-20" name="note" placeholder="Ghi chú khu vực cần trực" defaultValue={schedule?.note ?? ""} />
       <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
         {members.map((member) => (
-          <label key={member.user_id} className="flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm">
+          <label key={member.user_id} className="flex items-center gap-2 rounded-lg border border-white/70 bg-white/75 px-3 py-2 text-sm shadow-sm transition hover:-translate-y-0.5 hover:bg-white">
             <input name="memberIds" type="checkbox" value={member.user_id} defaultChecked={selectedMembers.has(member.user_id)} className="h-4 w-4 accent-brand-600" />
             <span>{member.profiles?.full_name}</span>
           </label>

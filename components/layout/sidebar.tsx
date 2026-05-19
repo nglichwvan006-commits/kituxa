@@ -15,9 +15,9 @@ const navItems = [
 
 export function Sidebar({ ctx }: { ctx: AppContext }) {
   return (
-    <aside className="hidden min-h-screen w-72 border-r border-slate-200 bg-white p-4 lg:block">
+    <aside className="hidden min-h-screen w-72 border-r border-white/70 bg-white/75 p-4 shadow-soft backdrop-blur-xl lg:block">
       <Link href="/dashboard" className="flex items-center gap-3 rounded-lg px-2 py-3">
-        <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-600 text-white">
+        <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-brand-500 via-indigo-500 to-coral text-white shadow-lg shadow-indigo-500/20">
           <Shield className="h-5 w-5" aria-hidden />
         </span>
         <span>
@@ -30,21 +30,23 @@ export function Sidebar({ ctx }: { ctx: AppContext }) {
         {navItems.map((item) => {
           const Icon = item.icon;
           return (
-            <Link key={item.href} href={item.href} className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-semibold text-slate-700 transition hover:bg-slate-50 hover:text-ink">
-              <Icon className="h-4 w-4" aria-hidden />
+            <Link key={item.href} href={item.href} className="group flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-bold text-slate-700 transition hover:-translate-y-0.5 hover:bg-white hover:text-ink hover:shadow-sm">
+              <span className="rounded-lg bg-slate-100 p-1.5 text-slate-500 transition group-hover:bg-brand-50 group-hover:text-brand-700">
+                <Icon className="h-4 w-4" aria-hidden />
+              </span>
               {item.label}
             </Link>
           );
         })}
       </nav>
 
-      <div className="mt-8 rounded-lg bg-slate-50 p-3">
+      <div className="mt-8 rounded-lg bg-gradient-to-br from-brand-50 via-white to-rose-50 p-3 ring-1 ring-white/80">
         <p className="text-sm font-bold text-ink">{ctx.profile.full_name}</p>
         <p className="mt-1 text-xs text-muted">{roleLabel(ctx.role)}</p>
       </div>
 
       <form action={signOutAction} className="mt-4">
-        <button className="flex w-full items-center gap-2 rounded-lg px-3 py-2 text-sm font-semibold text-rose-600 hover:bg-rose-50">
+        <button className="flex w-full items-center gap-2 rounded-lg px-3 py-2 text-sm font-semibold text-rose-600 transition hover:-translate-y-0.5 hover:bg-rose-50">
           <LogOut className="h-4 w-4" aria-hidden />
           Đăng xuất
         </button>

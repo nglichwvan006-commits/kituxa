@@ -4,6 +4,7 @@ import { DutyTaskCard } from "@/components/dashboard/duty-task-card";
 import { StatCards } from "@/components/dashboard/stat-cards";
 import { MemberTable } from "@/components/dashboard/member-table";
 import { EmptyState } from "@/components/ui/empty-state";
+import { PageHeading } from "@/components/ui/page-heading";
 import { getAppContext } from "@/services/context";
 import { getAttendanceRows, getDutyTasks, getRecentProofs, getRoomMembers } from "@/services/queries";
 import { getVietnamDateString } from "@/lib/utils";
@@ -22,13 +23,11 @@ export default async function AdminPage() {
 
   return (
     <main className="page-shell grid gap-5">
-      <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-        <div>
-          <h1 className="text-2xl font-black text-ink">Bảng điều khiển quản trị</h1>
-          <p className="mt-1 text-sm text-muted">Theo dõi phòng, lịch trực, điểm danh và minh chứng trong ngày.</p>
-        </div>
-        <Link href="/lich-truc" className="btn-primary">Tạo lịch trực</Link>
-      </div>
+      <PageHeading
+        title="Bảng điều khiển quản trị"
+        description="Theo dõi phòng, lịch trực, điểm danh và minh chứng trong ngày với một bảng điều khiển gọn mà vẫn có vibe."
+        action={<Link href="/lich-truc" className="btn-primary">Tạo lịch trực</Link>}
+      />
 
       <StatCards memberCount={members.length} taskCount={tasks.length} completedCount={completed} proofCount={proofData.count} />
 
@@ -46,7 +45,7 @@ export default async function AdminPage() {
         {attendance.length > 0 ? (
           <div className="grid gap-2">
             {attendance.map((row) => (
-              <div key={row.id} className="rounded-lg bg-slate-50 px-3 py-2 text-sm">
+              <div key={row.id} className="rounded-lg bg-white/70 px-3 py-2 text-sm shadow-sm ring-1 ring-white/80">
                 <strong>{row.profiles?.full_name}</strong> · {row.status === "present" ? "Có mặt" : `Vắng: ${row.absent_address}`}
               </div>
             ))}

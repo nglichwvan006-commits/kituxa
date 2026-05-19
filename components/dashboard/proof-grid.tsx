@@ -15,8 +15,8 @@ export function ProofGrid({ proofs, currentUserId, role }: { proofs: DutyProof[]
       {proofs.map((proof) => {
         const canDelete = proof.user_id === currentUserId || role === "admin";
         return (
-          <article key={proof.id} className="overflow-hidden rounded-lg border border-slate-200 bg-white">
-            <div className="relative aspect-[4/3] bg-slate-100">
+          <article key={proof.id} className="surface animate-in overflow-hidden rounded-lg">
+            <div className="relative aspect-[4/3] bg-gradient-to-br from-brand-50 to-rose-50">
               <Image src={proof.public_url} alt={`Minh chứng của ${proof.profiles?.full_name ?? "thành viên"}`} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover" loading="lazy" />
             </div>
             <div className="p-3">

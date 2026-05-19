@@ -3,6 +3,7 @@ import { Section } from "@/components/ui/section";
 import { DutyTaskCard } from "@/components/dashboard/duty-task-card";
 import { AttendanceForm } from "@/components/forms/attendance-form";
 import { EmptyState } from "@/components/ui/empty-state";
+import { PageHeading } from "@/components/ui/page-heading";
 import { getAppContext } from "@/services/context";
 import { getDutyTasks } from "@/services/queries";
 import { getVietnamDateString } from "@/lib/utils";
@@ -15,10 +16,7 @@ export default async function MemberPage() {
 
   return (
     <main className="page-shell grid gap-5">
-      <div>
-        <h1 className="text-2xl font-black text-ink">Trang cá nhân</h1>
-        <p className="mt-1 text-sm text-muted">Xem lịch trực, điểm danh và gửi minh chứng sau khi hoàn thành.</p>
-      </div>
+      <PageHeading title="Trang cá nhân" description="Xem lịch trực, điểm danh và gửi minh chứng sau khi hoàn thành ca của bạn." />
       <Section title="Điểm danh hôm nay">
         <AttendanceForm today={today} />
       </Section>

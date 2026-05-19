@@ -3,7 +3,7 @@ import { completeDutyWithProofsAction } from "@/services/proof-actions";
 
 export function ProofUploadForm({ taskId, disabled }: { taskId: string; disabled?: boolean }) {
   return (
-    <form action={completeDutyWithProofsAction} className="mt-3 rounded-lg border border-slate-200 bg-slate-50 p-3">
+    <form action={completeDutyWithProofsAction} className="mt-3 rounded-lg border border-white/70 bg-white/70 p-3 shadow-sm">
       <input type="hidden" name="taskId" value={taskId} />
       <label className="block text-sm font-semibold text-ink" htmlFor={`proofs-${taskId}`}>
         Ảnh minh chứng

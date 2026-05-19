@@ -4,7 +4,7 @@
 
 :root {
   color-scheme: light;
-  --background: #f8fafc;
+  --background: #fbfdff;
   --foreground: #18212f;
 }
 
@@ -14,7 +14,12 @@
 
 body {
   margin: 0;
-  background: var(--background);
+  min-height: 100vh;
+  background:
+    linear-gradient(115deg, rgba(20, 184, 166, 0.14), transparent 26%),
+    linear-gradient(245deg, rgba(251, 113, 133, 0.14), transparent 28%),
+    linear-gradient(180deg, #fff7ed 0%, #f8fafc 38%, #eef2ff 100%);
+  background-attachment: fixed;
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -36,24 +41,109 @@ img {
 
 .page-shell {
   @apply mx-auto w-full max-w-7xl px-4 py-5 sm:px-6 lg:px-8;
+  animation: page-rise 520ms ease-out both;
 }
 
 .surface {
-  @apply border border-slate-200 bg-white shadow-soft;
+  @apply border border-white/70 bg-white/85 shadow-soft backdrop-blur-xl;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    border-color 180ms ease;
+}
+
+.surface:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 22px 70px rgba(15, 23, 42, 0.1);
+  border-color: rgba(255, 255, 255, 0.95);
 }
 
 .input {
-  @apply w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-ink outline-none transition focus:border-brand-500 focus:ring-2 focus:ring-brand-100 disabled:cursor-not-allowed disabled:bg-slate-100;
+  @apply w-full rounded-lg border border-white/70 bg-white/90 px-3 py-2 text-sm text-ink outline-none shadow-sm transition placeholder:text-slate-400 focus:border-brand-500 focus:bg-white focus:ring-4 focus:ring-brand-100 disabled:cursor-not-allowed disabled:bg-slate-100;
 }
 
 .btn-primary {
-  @apply inline-flex items-center justify-center gap-2 rounded-lg bg-brand-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-brand-700 disabled:cursor-not-allowed disabled:opacity-60;
+  @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2 text-sm font-black text-white shadow-lg shadow-teal-500/20 transition disabled:cursor-not-allowed disabled:opacity-60;
+  background: linear-gradient(135deg, #14b8a6, #6366f1 54%, #fb7185);
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px) scale(1.01);
+  box-shadow: 0 18px 36px rgba(99, 102, 241, 0.22);
 }
 
 .btn-secondary {
-  @apply inline-flex items-center justify-center gap-2 rounded-lg border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-ink transition hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-60;
+  @apply inline-flex items-center justify-center gap-2 rounded-lg border border-white/70 bg-white/85 px-4 py-2 text-sm font-bold text-ink shadow-sm backdrop-blur transition hover:bg-white disabled:cursor-not-allowed disabled:opacity-60;
+}
+
+.btn-secondary:hover {
+  transform: translateY(-1px);
 }
 
 .btn-danger {
   @apply inline-flex items-center justify-center gap-2 rounded-lg bg-rose-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-rose-700 disabled:cursor-not-allowed disabled:opacity-60;
+}
+
+.page-hero {
+  @apply relative overflow-hidden rounded-lg border border-white/70 bg-white/80 p-5 shadow-soft backdrop-blur-xl sm:p-6;
+}
+
+.page-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(20, 184, 166, 0.18), transparent 42%),
+    linear-gradient(270deg, rgba(251, 113, 133, 0.16), transparent 48%);
+  opacity: 0.8;
+}
+
+.page-hero > * {
+  position: relative;
+}
+
+.gradient-title {
+  @apply text-2xl font-black sm:text-3xl;
+  background: linear-gradient(135deg, #0f766e, #4f46e5 50%, #e11d48);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.animate-in {
+  animation: pop-in 280ms ease-out both;
+}
+
+@keyframes page-rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pop-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.001ms !important;
+  }
 }
