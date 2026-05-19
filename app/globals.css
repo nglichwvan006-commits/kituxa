@@ -40,7 +40,7 @@ img {
 }
 
 .page-shell {
-  @apply mx-auto w-full max-w-7xl px-4 py-5 sm:px-6 lg:px-8;
+  @apply mx-auto w-full px-5 py-5;
   animation: page-rise 520ms ease-out both;
 }
 
@@ -85,7 +85,7 @@ img {
 }
 
 .page-hero {
-  @apply relative overflow-hidden rounded-lg border border-white/80 bg-gradient-to-r from-brand-100 to-skysoft p-5 shadow-soft sm:p-6;
+  @apply relative overflow-hidden rounded-[32px] border border-white/80 bg-gradient-to-r from-brand-100 to-skysoft p-5 shadow-sm;
 }
 
 .page-hero::before {
@@ -113,6 +113,15 @@ img {
 
 .animate-in {
   animation: pop-in 280ms ease-out both;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 @keyframes page-rise {

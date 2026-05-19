@@ -19,11 +19,11 @@ export function StatCards({
   ];
 
   return (
-    <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+    <div className="grid grid-cols-2 gap-3">
       {items.map((item) => {
         const Icon = item.icon;
         return (
-          <div key={item.label} className="surface animate-in overflow-hidden rounded-lg p-4">
+          <div key={item.label} className="surface animate-in overflow-hidden rounded-[24px] p-4">
             <div className={`-mx-4 -mt-4 mb-4 h-1 ${item.line}`} />
             <div className="flex items-center justify-between">
               <p className="text-sm font-bold text-muted">{item.label}</p>

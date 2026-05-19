@@ -12,7 +12,7 @@ export function Section({
   children: ReactNode;
 }) {
   return (
-    <section className="surface animate-in rounded-lg p-4 sm:p-5">
+    <section className="surface animate-in rounded-[28px] p-5">
       <div className="mb-4 flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
         <div>
           <div className="mb-2 h-1 w-10 rounded-full bg-brand-500" />

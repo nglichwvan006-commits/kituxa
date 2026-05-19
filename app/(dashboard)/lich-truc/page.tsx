@@ -42,7 +42,7 @@ export default async function SchedulePage() {
         {schedules.length > 0 ? (
           <div className="grid gap-3">
             {schedules.map((schedule) => (
-              <article key={schedule.id} className="animate-in overflow-hidden rounded-lg border border-[#C5E1A5] bg-gradient-to-br from-[#F1F8E9] to-[#E3F2FD] p-4 shadow-soft">
+              <article key={schedule.id} className="animate-in overflow-hidden rounded-[28px] border-2 border-[#C5E1A5] bg-gradient-to-br from-[#F1F8E9] to-[#E3F2FD] p-5 shadow-sm">
                 <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
                   <div>
                     <p className="text-xs font-black uppercase tracking-[0.16em] text-brand-700">{days[schedule.day_of_week]}</p>

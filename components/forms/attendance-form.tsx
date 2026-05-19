@@ -39,7 +39,7 @@ export function AttendanceForm({ today }: { today: string }) {
             />
           </span>
         </label>
-        <button className="btn-primary self-end" disabled={isPending}>
+        <button className="btn-primary self-end rounded-2xl py-3" disabled={isPending}>
           {isPending ? <Loader2 className="h-4 w-4 animate-spin" aria-hidden /> : <CheckCircle2 className="h-4 w-4" aria-hidden />}
           Lưu điểm danh
         </button>
