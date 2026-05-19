@@ -51,13 +51,12 @@ Mở `http://localhost:3000`.
 2. Cấu hình 4 biến môi trường ở Production.
 3. Deploy.
 4. `vercel.json` đã khai báo cron gọi `/api/cleanup-proofs` lúc 18:00 UTC mỗi ngày, tương ứng 01:00 tại Việt Nam.
-5. Vercel Cron cần gửi header:
+5. Vercel Cron sẽ tự gửi header sau nếu bạn cấu hình biến môi trường `CRON_SECRET` trong project:
 
 ```txt
 Authorization: Bearer <CRON_SECRET>
 ```
 
-Nếu dùng Vercel Cron mặc định không tùy biến header, tạo cron qua Vercel dashboard/CLI với header bảo mật hoặc gọi endpoint bằng dịch vụ cron hỗ trợ custom header.
 
 ## Luồng test chính
 
