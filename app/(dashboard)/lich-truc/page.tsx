@@ -43,7 +43,7 @@ export default async function SchedulePage() {
           <div className="grid gap-3">
             {schedules.map((schedule) => (
               <article key={schedule.id} className="surface animate-in overflow-hidden rounded-lg p-4">
-                <div className="-mx-4 -mt-4 mb-4 h-1.5 bg-gradient-to-r from-brand-400 via-indigo-400 to-coral" />
+                <div className="-mx-4 -mt-4 mb-4 h-1 bg-brand-600" />
                 <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
                   <div>
                     <p className="text-xs font-black uppercase tracking-[0.16em] text-brand-700">{days[schedule.day_of_week]}</p>
@@ -61,14 +61,14 @@ export default async function SchedulePage() {
                 </div>
                 <div className="mt-3 flex flex-wrap gap-2">
                   {schedule.duty_schedule_members.map((member) => (
-                    <span key={member.user_id} className="rounded-full bg-white px-3 py-1 text-sm font-semibold text-slate-700 shadow-sm ring-1 ring-slate-100">
+                    <span key={member.user_id} className="rounded-full bg-slate-50 px-3 py-1 text-sm font-semibold text-slate-700 ring-1 ring-slate-100">
                       {member.profiles?.full_name}
                     </span>
                   ))}
                   <StatusBadge type="duty" value="not_started" />
                 </div>
                 {canManage ? (
-                  <details className="mt-4 rounded-lg border border-white/70 bg-white/70 p-3">
+                  <details className="mt-4 rounded-lg border border-slate-200 bg-slate-50 p-3">
                     <summary className="cursor-pointer text-sm font-bold text-ink">Sửa lịch này</summary>
                     <div className="mt-3">
                       <ScheduleForm members={members} schedule={schedule} />

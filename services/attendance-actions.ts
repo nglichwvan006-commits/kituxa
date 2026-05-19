@@ -11,11 +11,17 @@ export type AttendanceFormState = {
   message: string;
 };
 
+const optionalText = z.preprocess((value) => {
+  if (value === null || value === undefined) return undefined;
+  const text = String(value).trim();
+  return text.length > 0 ? text : undefined;
+}, z.string().optional());
+
 const attendanceSchema = z
   .object({
     date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
     status: z.enum(["present", "absent"]),
-    absentAddress: z.string().trim().optional()
+    absentAddress: optionalText
   })
   .refine((value) => value.status === "present" || !!value.absentAddress, {
     message: "Khi chọn vắng, bạn cần nhập địa chỉ vắng.",
