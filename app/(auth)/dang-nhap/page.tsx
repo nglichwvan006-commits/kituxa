@@ -8,8 +8,8 @@ function LoginForm({ searchParams }: { searchParams: { [key: string]: string | s
 
   return (
     <main className="grid min-h-screen place-items-center px-4 py-10">
-      <div className="w-full max-w-md overflow-hidden rounded-lg border border-slate-200 bg-white shadow-soft">
-        <div className="h-1 bg-brand-600" />
+      <div className="w-full max-w-md overflow-hidden rounded-lg border border-white/80 bg-white/85 shadow-soft backdrop-blur-xl">
+        <div className="h-1 bg-gradient-to-r from-brand-500 to-sky-300" />
         <div className="p-6">
           <div className="flex items-center gap-3">
             <span className="flex h-12 w-12 items-center justify-center rounded-lg bg-brand-600 text-white shadow-sm">
@@ -21,7 +21,7 @@ function LoginForm({ searchParams }: { searchParams: { [key: string]: string | s
             </div>
           </div>
 
-          <div className="mt-5 rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-sm font-semibold text-slate-700">
+          <div className="mt-5 rounded-lg border border-white/80 bg-brand-50/80 px-3 py-2 text-sm font-semibold text-slate-700">
             Quản lý lịch trực, điểm danh, minh chứng và thông báo realtime trong một hệ thống.
           </div>
 

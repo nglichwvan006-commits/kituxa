@@ -13,9 +13,9 @@ export function PageHeading({
     <div className="page-hero">
       <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
         <div>
-          <p className="text-xs font-black uppercase tracking-[0.18em] text-brand-700">Quản lý ký túc xá</p>
+          <p className="text-xs font-black uppercase tracking-[0.18em] text-[#5E7A5E]">Phòng ký túc xá</p>
           <h1 className="gradient-title mt-2">{title}</h1>
-          <p className="mt-2 max-w-2xl text-sm font-medium leading-6 text-muted">{description}</p>
+          <p className="mt-2 max-w-2xl text-sm font-semibold leading-6 text-[#5E7A5E]">{description}</p>
         </div>
         {action}
       </div>

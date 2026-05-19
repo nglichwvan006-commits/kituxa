@@ -5,16 +5,17 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        ink: "#18212f",
-        muted: "#64748b",
+        ink: "#2D4739",
+        muted: "#6f8076",
         brand: {
-          50: "#f0fdfa",
-          100: "#ccfbf1",
-          500: "#14b8a6",
-          600: "#0d9488",
-          700: "#0f766e"
+          50: "#f1f8e9",
+          100: "#e8f5e9",
+          500: "#81c784",
+          600: "#66bb6a",
+          700: "#4f9a54"
         },
-        coral: "#fb7185",
+        skysoft: "#e3f2fd",
+        coral: "#ff8a80",
         amber: "#f59e0b"
       },
       boxShadow: {

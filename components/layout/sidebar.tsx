@@ -15,7 +15,7 @@ const navItems = [
 
 export function Sidebar({ ctx }: { ctx: AppContext }) {
   return (
-    <aside className="hidden min-h-screen w-72 border-r border-slate-200 bg-white p-4 shadow-sm lg:block">
+    <aside className="hidden min-h-screen w-72 border-r border-white/70 bg-white/70 p-4 shadow-sm backdrop-blur-xl lg:block">
       <Link href="/dashboard" className="flex items-center gap-3 rounded-lg px-2 py-3">
         <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-600 text-white shadow-sm">
           <Shield className="h-5 w-5" aria-hidden />
@@ -30,7 +30,7 @@ export function Sidebar({ ctx }: { ctx: AppContext }) {
         {navItems.map((item) => {
           const Icon = item.icon;
           return (
-            <Link key={item.href} href={item.href} className="group flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-bold text-slate-700 transition hover:bg-slate-50 hover:text-ink">
+            <Link key={item.href} href={item.href} className="group flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-bold text-slate-700 transition hover:bg-white/80 hover:text-ink hover:shadow-sm">
               <span className="rounded-lg bg-slate-100 p-1.5 text-slate-500 transition group-hover:bg-brand-50 group-hover:text-brand-700">
                 <Icon className="h-4 w-4" aria-hidden />
               </span>
@@ -40,7 +40,7 @@ export function Sidebar({ ctx }: { ctx: AppContext }) {
         })}
       </nav>
 
-      <div className="mt-8 rounded-lg border border-slate-200 bg-slate-50 p-3">
+      <div className="mt-8 rounded-lg border border-white/80 bg-white/70 p-3 shadow-sm">
         <p className="text-sm font-bold text-ink">{ctx.profile.full_name}</p>
         <p className="mt-1 text-xs text-muted">{roleLabel(ctx.role)}</p>
       </div>

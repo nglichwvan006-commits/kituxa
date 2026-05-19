@@ -42,8 +42,7 @@ export default async function SchedulePage() {
         {schedules.length > 0 ? (
           <div className="grid gap-3">
             {schedules.map((schedule) => (
-              <article key={schedule.id} className="surface animate-in overflow-hidden rounded-lg p-4">
-                <div className="-mx-4 -mt-4 mb-4 h-1 bg-brand-600" />
+              <article key={schedule.id} className="animate-in overflow-hidden rounded-lg border border-[#C5E1A5] bg-gradient-to-br from-[#F1F8E9] to-[#E3F2FD] p-4 shadow-soft">
                 <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
                   <div>
                     <p className="text-xs font-black uppercase tracking-[0.16em] text-brand-700">{days[schedule.day_of_week]}</p>
@@ -61,7 +60,7 @@ export default async function SchedulePage() {
                 </div>
                 <div className="mt-3 flex flex-wrap gap-2">
                   {schedule.duty_schedule_members.map((member) => (
-                    <span key={member.user_id} className="rounded-full bg-slate-50 px-3 py-1 text-sm font-semibold text-slate-700 ring-1 ring-slate-100">
+                    <span key={member.user_id} className="rounded-lg bg-white/70 px-3 py-1.5 text-sm font-semibold text-slate-700 shadow-sm">
                       {member.profiles?.full_name}
                     </span>
                   ))}

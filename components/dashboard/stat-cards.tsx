@@ -12,10 +12,10 @@ export function StatCards({
   proofCount: number;
 }) {
   const items = [
-    { label: "Thành viên", value: memberCount, icon: Users, color: "text-sky-700 bg-sky-50", line: "bg-sky-500" },
-    { label: "Ca hôm nay", value: taskCount, icon: CalendarCheck2, color: "text-brand-700 bg-brand-50", line: "bg-brand-600" },
-    { label: "Đã hoàn thành", value: completedCount, icon: UserCheck, color: "text-emerald-700 bg-emerald-50", line: "bg-emerald-600" },
-    { label: "Ảnh minh chứng", value: proofCount, icon: Camera, color: "text-indigo-700 bg-indigo-50", line: "bg-indigo-600" }
+    { label: "Thành viên", value: memberCount, icon: Users, color: "text-[#0277BD] bg-[#E1F5FE]", line: "bg-[#4FC3F7]" },
+    { label: "Ca hôm nay", value: taskCount, icon: CalendarCheck2, color: "text-[#558B2F] bg-[#F1F8E9]", line: "bg-[#9CCC65]" },
+    { label: "Đã hoàn thành", value: completedCount, icon: UserCheck, color: "text-[#2E7D32] bg-[#E8F5E9]", line: "bg-[#66BB6A]" },
+    { label: "Ảnh minh chứng", value: proofCount, icon: Camera, color: "text-[#F57C00] bg-[#FFF8E1]", line: "bg-[#FFB74D]" }
   ];
 
   return (
